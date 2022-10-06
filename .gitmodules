@@ -1,0 +1,18 @@
+[submodule "packages/rewind-protocol"]
+	path = packages/rewind-protocol
+	url = git@github.com:rewind-media/rewind-protocol.git
+[submodule "packages/rewind-common"]
+	path = packages/rewind-common
+	url = git@github.com:rewind-media/rewind-common.git
+[submodule "packages/rewind-cron"]
+	path = packages/rewind-cron
+	url = git@github.com:rewind-media/rewind-cron.git
+[submodule "packages/rewind-api"]
+	path = packages/rewind-api
+	url = git@github.com:rewind-media/rewind-api.git
+[submodule "packages/rewind-web"]
+	path = packages/rewind-web
+	url = git@github.com:rewind-media/rewind-web.git
+[submodule "packages/rewind-worker"]
+	path = packages/rewind-worker
+	url = git@github.com:rewind-media/rewind-worker.git
