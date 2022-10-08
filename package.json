@@ -23,7 +23,7 @@
     "build": "npm run build-protocol && npm run build-common && npm run build-worker && npm run build-cron && npm run build-web && npm run build-api",
     "start-worker": "cd packages/rewind-worker && npm run start",
     "start-cron": "cd packages/rewind-cron && npm run start",
-    "start-api": "npm run _ln-web-api && cd packages/rewind-api && npm run start",
+    "start-api": "npm run _ln-web-api || cd packages/rewind-api && npm run start",
     "start": "npm run start-worker & npm run start-cron & npm run start-api",
     "clean-protocol": "rm packages/rewind-protocol/dist -rf",
     "clean-common": "rm packages/rewind-common/dist -rf",
@@ -32,7 +32,14 @@
     "clean-web": "rm packages/rewind-web/dist -rf",
     "clean-api": "rm packages/rewind-api/dist -rf",
     "clean": "npm run clean-protocol && npm run clean-common && npm run clean-worker && npm run clean-cron && npm run clean-web && npm run clean-api",
-    "build-and-start": "npm run clean && npm run build && npm run start"
+    "build-and-start": "npm run clean && npm run build && npm run start",
+    "build-and-start-cron": "npm run clean-cron && npm run build-cron && npm run start-cron",
+    "pub-protocol": "cd packages/rewind-protocol && npm run pub",
+    "pub-common": "cd packages/rewind-common && npm run pub",
+    "pub-cron": "cd packages/rewind-cron && npm run pub",
+    "pub-api": "cd packages/rewind-api && npm run pub",
+    "pub-web": "cd packages/rewind-web && npm run pub",
+    "pub-worker": "cd packages/rewind-worker && npm run pub"
   },
   "workspaces": [
     "packages/rewind-protocol",
