@@ -13,7 +13,7 @@
   "main": "dist/index.js",
   "private": true,
   "scripts": {
-    "_ln-web-api": "mkdir -p packages/rewind-api/node_modules/@rewind-media && rm ./packages/rewind-api/node_modules/@rewind-media/rewind-web && ln -s ../../../rewind-web ./packages/rewind-api/node_modules/@rewind-media/rewind-web",
+    "_ln-web-api": "mkdir -p packages/rewind-api/node_modules/@rewind-media; rm ./packages/rewind-api/node_modules/@rewind-media/rewind-web; ln -s ../../../rewind-web ./packages/rewind-api/node_modules/@rewind-media/rewind-web",
     "build-protocol": "cd packages/rewind-protocol && npm run build",
     "build-common": "cd packages/rewind-common && npm run build",
     "build-worker": "cd packages/rewind-worker && npm run build",
@@ -23,7 +23,7 @@
     "build": "npm run build-protocol && npm run build-common && npm run build-worker && npm run build-cron && npm run build-web && npm run build-api",
     "start-worker": "cd packages/rewind-worker && npm run start",
     "start-cron": "cd packages/rewind-cron && npm run start",
-    "start-api": "npm run _ln-web-api || cd packages/rewind-api && npm run start",
+    "start-api": "npm run _ln-web-api && cd packages/rewind-api && npm run start",
     "start": "npm run start-worker & npm run start-cron & npm run start-api",
     "clean-protocol": "rm packages/rewind-protocol/dist -rf",
     "clean-common": "rm packages/rewind-common/dist -rf",
@@ -39,7 +39,20 @@
     "pub-cron": "cd packages/rewind-cron && npm run pub",
     "pub-api": "cd packages/rewind-api && npm run pub",
     "pub-web": "cd packages/rewind-web && npm run pub",
-    "pub-worker": "cd packages/rewind-worker && npm run pub"
+    "pub-worker": "cd packages/rewind-worker && npm run pub",
+    "update-protocol": "cd packages/rewind-protocol && npm run update",
+    "update-common": "cd packages/rewind-common && npm run update",
+    "update-cron": "cd packages/rewind-cron && npm run update",
+    "update-api": "cd packages/rewind-api && npm run update",
+    "update-web": "cd packages/rewind-web && npm run update",
+    "update-worker": "cd packages/rewind-worker && npm run update",
+    "update-and-pub-protocol": "npm run update-protocol && npm run pub-protocol",
+    "update-and-pub-common": "npm run update-common && npm run pub-common",
+    "update-and-pub-cron": "npm run update-cron && npm run pub-cron",
+    "update-and-pub-api": "npm run update-api && npm run pub-api",
+    "update-and-pub-web": "npm run update-web && npm run pub-web",
+    "update-and-pub-worker": "npm run update-worker && npm run pub-worker",
+    "update-and-pub": "npm run update-and-pub-protocol && npm run update-and-pub-common && npm run update-and-pub-web && npm run update-and-pub-api && npm run update-and-pub-cron && npm run update-and-pub-worker"
   },
   "workspaces": [
     "packages/rewind-protocol",
@@ -48,5 +61,8 @@
     "packages/rewind-cron",
     "packages/rewind-web",
     "packages/rewind-api"
-  ]
+  ],
+  "devDependencies": {
+    "npm-check": "^6.0.1"
+  }
 }
