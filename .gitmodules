@@ -16,3 +16,6 @@
 [submodule "packages/rewind-worker"]
 	path = packages/rewind-worker
 	url = git@github.com:rewind-media/rewind-worker.git
+[submodule "packages/rewind-native"]
+	path = packages/rewind-native
+	url = https://github.com/rewind-media/rewind-native.git
